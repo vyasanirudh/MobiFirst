@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7778D5B11B47DE8D00745011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B01B47DE8D00745011 /* main.m */; };
-		7778D5B41B47DE8D00745011 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B31B47DE8D00745011 /* AppDelegate.m */; };
-		7778D5B71B47DE8D00745011 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B61B47DE8D00745011 /* ViewController.m */; };
 		7778D5BA1B47DE8D00745011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5B81B47DE8D00745011 /* Main.storyboard */; };
 		7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BB1B47DE8D00745011 /* Images.xcassets */; };
 		7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */; };
 		7778D5CB1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5CA1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m */; };
+		7778D5DB1B47E00200745011 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5D91B47E00200745011 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +29,14 @@
 		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7778D5B21B47DE8D00745011 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7778D5B31B47DE8D00745011 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7778D5B51B47DE8D00745011 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7778D5B61B47DE8D00745011 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7778D5B91B47DE8D00745011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7778D5BB1B47DE8D00745011 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7778D5BE1B47DE8D00745011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7778D5C41B47DE8E00745011 /* MobiFirst Video Filter POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MobiFirst Video Filter POCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5C91B47DE8E00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5CA1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiFirst_Video_Filter_POCTests.m; sourceTree = "<group>"; };
+		7778D5D81B47E00200745011 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7778D5D91B47E00200745011 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +78,11 @@
 		7778D5AD1B47DE8D00745011 /* MobiFirst Video Filter POC */ = {
 			isa = PBXGroup;
 			children = (
-				7778D5B21B47DE8D00745011 /* AppDelegate.h */,
-				7778D5B31B47DE8D00745011 /* AppDelegate.m */,
-				7778D5B51B47DE8D00745011 /* ViewController.h */,
-				7778D5B61B47DE8D00745011 /* ViewController.m */,
+				7778D5D41B47E00200745011 /* Controllers */,
+				7778D5D51B47E00200745011 /* Models */,
+				7778D5D61B47E00200745011 /* Handlers */,
+				7778D5D71B47E00200745011 /* AppDelegate */,
+				7778D5DA1B47E00200745011 /* ViewControllers */,
 				7778D5B81B47DE8D00745011 /* Main.storyboard */,
 				7778D5BB1B47DE8D00745011 /* Images.xcassets */,
 				7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */,
@@ -117,6 +115,43 @@
 				7778D5C91B47DE8E00745011 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7778D5D41B47E00200745011 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7778D5D51B47E00200745011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7778D5D61B47E00200745011 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		7778D5D71B47E00200745011 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7778D5D81B47E00200745011 /* AppDelegate.h */,
+				7778D5D91B47E00200745011 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7778D5DA1B47E00200745011 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7778D5B71B47DE8D00745011 /* ViewController.m in Sources */,
-				7778D5B41B47DE8D00745011 /* AppDelegate.m in Sources */,
+				7778D5DB1B47E00200745011 /* AppDelegate.m in Sources */,
 				7778D5B11B47DE8D00745011 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
