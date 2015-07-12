@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  MobiFirst Video Filter POC
+//
+//  Created by Anirudh Vyas on 12/07/15.
+//  Copyright (c) 2015 Anirudh Vyas. All rights reserved.
+//
+
+#ifndef MobiFirst_Video_Filter_POC_PrefixHeader_pch
+#define MobiFirst_Video_Filter_POC_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Constants.h"
+
+#endif

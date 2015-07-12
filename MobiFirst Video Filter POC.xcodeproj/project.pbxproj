@@ -8,11 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7778D5B11B47DE8D00745011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B01B47DE8D00745011 /* main.m */; };
-		7778D5BA1B47DE8D00745011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5B81B47DE8D00745011 /* Main.storyboard */; };
 		7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BB1B47DE8D00745011 /* Images.xcassets */; };
 		7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */; };
 		7778D5CB1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5CA1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m */; };
 		7778D5DB1B47E00200745011 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5D91B47E00200745011 /* AppDelegate.m */; };
+		77F2DE5C1B51FEFD00B42779 /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE511B51FEFD00B42779 /* DKCircleButton.m */; };
+		77F2DE5D1B51FEFD00B42779 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE541B51FEFD00B42779 /* FXBlurView.m */; };
+		77F2DE5E1B51FEFD00B42779 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE561B51FEFD00B42779 /* ProximaNova-Bold.otf */; };
+		77F2DE5F1B51FEFD00B42779 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE571B51FEFD00B42779 /* ProximaNova-Light.otf */; };
+		77F2DE601B51FEFD00B42779 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE581B51FEFD00B42779 /* ProximaNova-Regular.otf */; };
+		77F2DE611B51FEFD00B42779 /* ProximaNova-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE591B51FEFD00B42779 /* ProximaNova-SemiBold.otf */; };
+		77F2DE651B5202E700B42779 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE641B5202E700B42779 /* UIHelper.m */; };
+		77F2DE6E1B520A5900B42779 /* WelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE6C1B520A5900B42779 /* WelcomeScreenViewController.m */; };
+		77F2DE6F1B520A5900B42779 /* WelcomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE6D1B520A5900B42779 /* WelcomeScreenViewController.xib */; };
+		77F2DE731B520ACD00B42779 /* VideoEditorScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE711B520ACD00B42779 /* VideoEditorScreenViewController.m */; };
+		77F2DE741B520ACD00B42779 /* VideoEditorScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE721B520ACD00B42779 /* VideoEditorScreenViewController.xib */; };
+		77F2DE771B521D0300B42779 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F2DE761B521D0300B42779 /* AVFoundation.framework */; };
+		77F2DE7D1B5222B200B42779 /* SampleVideoForDemo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE791B5222B200B42779 /* SampleVideoForDemo.mp4 */; };
+		77F2DE7E1B5222B200B42779 /* welcomeScreenBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE7B1B5222B200B42779 /* welcomeScreenBackground.jpg */; };
+		77F2DE7F1B5222B200B42779 /* welcomeScreenBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE7C1B5222B200B42779 /* welcomeScreenBackground@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,13 +37,33 @@
 			remoteGlobalIDString = 7778D5AA1B47DE8D00745011;
 			remoteInfo = "MobiFirst Video Filter POC";
 		};
+		77F2DE911B5236E800B42779 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		77F2DE931B5236E800B42779 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		77F2DE951B52372B00B42779 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7778D5B91B47DE8D00745011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7778D5BB1B47DE8D00745011 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7778D5BE1B47DE8D00745011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7778D5C41B47DE8E00745011 /* MobiFirst Video Filter POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MobiFirst Video Filter POCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +71,29 @@
 		7778D5CA1B47DE8E00745011 /* MobiFirst_Video_Filter_POCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobiFirst_Video_Filter_POCTests.m; sourceTree = "<group>"; };
 		7778D5D81B47E00200745011 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7778D5D91B47E00200745011 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		77F2DE501B51FEFD00B42779 /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
+		77F2DE511B51FEFD00B42779 /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
+		77F2DE531B51FEFD00B42779 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		77F2DE541B51FEFD00B42779 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		77F2DE561B51FEFD00B42779 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		77F2DE571B51FEFD00B42779 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		77F2DE581B51FEFD00B42779 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		77F2DE591B51FEFD00B42779 /* ProximaNova-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-SemiBold.otf"; sourceTree = "<group>"; };
+		77F2DE631B5202E700B42779 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
+		77F2DE641B5202E700B42779 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
+		77F2DE671B5204DA00B42779 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		77F2DE681B52065700B42779 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		77F2DE6B1B520A5900B42779 /* WelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScreenViewController.h; sourceTree = "<group>"; };
+		77F2DE6C1B520A5900B42779 /* WelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScreenViewController.m; sourceTree = "<group>"; };
+		77F2DE6D1B520A5900B42779 /* WelcomeScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeScreenViewController.xib; sourceTree = "<group>"; };
+		77F2DE701B520ACD00B42779 /* VideoEditorScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoEditorScreenViewController.h; sourceTree = "<group>"; };
+		77F2DE711B520ACD00B42779 /* VideoEditorScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoEditorScreenViewController.m; sourceTree = "<group>"; };
+		77F2DE721B520ACD00B42779 /* VideoEditorScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoEditorScreenViewController.xib; sourceTree = "<group>"; };
+		77F2DE761B521D0300B42779 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		77F2DE791B5222B200B42779 /* SampleVideoForDemo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideoForDemo.mp4; sourceTree = "<group>"; };
+		77F2DE7B1B5222B200B42779 /* welcomeScreenBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcomeScreenBackground.jpg; sourceTree = "<group>"; };
+		77F2DE7C1B5222B200B42779 /* welcomeScreenBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "welcomeScreenBackground@2x.jpg"; sourceTree = "<group>"; };
+		77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GPUImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F2DE771B521D0300B42779 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,15 +136,20 @@
 		7778D5AD1B47DE8D00745011 /* MobiFirst Video Filter POC */ = {
 			isa = PBXGroup;
 			children = (
-				7778D5D41B47E00200745011 /* Controllers */,
-				7778D5D51B47E00200745011 /* Models */,
-				7778D5D61B47E00200745011 /* Handlers */,
 				7778D5D71B47E00200745011 /* AppDelegate */,
-				7778D5DA1B47E00200745011 /* ViewControllers */,
-				7778D5B81B47DE8D00745011 /* Main.storyboard */,
+				77F2DE661B5204AC00B42779 /* Constants */,
+				7778D5D41B47E00200745011 /* Controllers */,
+				77F2DE551B51FEFD00B42779 /* CustomFont Files */,
+				77F2DE801B52359F00B42779 /* Frameworks */,
+				7778D5D61B47E00200745011 /* Handlers */,
+				77F2DE621B52020200B42779 /* Helper Classes */,
 				7778D5BB1B47DE8D00745011 /* Images.xcassets */,
 				7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */,
+				7778D5D51B47E00200745011 /* Models */,
+				77F2DE4B1B51FEFD00B42779 /* Resources */,
 				7778D5AE1B47DE8D00745011 /* Supporting Files */,
+				77F2DE4E1B51FEFD00B42779 /* Third Party Libraries */,
+				7778D5DA1B47E00200745011 /* ViewControllers */,
 			);
 			path = "MobiFirst Video Filter POC";
 			sourceTree = "<group>";
@@ -96,6 +159,7 @@
 			children = (
 				7778D5AF1B47DE8D00745011 /* Info.plist */,
 				7778D5B01B47DE8D00745011 /* main.m */,
+				77F2DE681B52065700B42779 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,8 +214,131 @@
 		7778D5DA1B47E00200745011 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				77F2DE691B520A5900B42779 /* VideoEditorScreenViewController */,
+				77F2DE6A1B520A5900B42779 /* WelcomeScreenViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		77F2DE4B1B51FEFD00B42779 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE781B5222B200B42779 /* Video Resources */,
+				77F2DE7A1B5222B200B42779 /* Image Resources */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77F2DE4E1B51FEFD00B42779 /* Third Party Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE4F1B51FEFD00B42779 /* DKCircleButton */,
+				77F2DE521B51FEFD00B42779 /* FXBlurView */,
+			);
+			path = "Third Party Libraries";
+			sourceTree = "<group>";
+		};
+		77F2DE4F1B51FEFD00B42779 /* DKCircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE501B51FEFD00B42779 /* DKCircleButton.h */,
+				77F2DE511B51FEFD00B42779 /* DKCircleButton.m */,
+			);
+			path = DKCircleButton;
+			sourceTree = "<group>";
+		};
+		77F2DE521B51FEFD00B42779 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE531B51FEFD00B42779 /* FXBlurView.h */,
+				77F2DE541B51FEFD00B42779 /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		77F2DE551B51FEFD00B42779 /* CustomFont Files */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE561B51FEFD00B42779 /* ProximaNova-Bold.otf */,
+				77F2DE571B51FEFD00B42779 /* ProximaNova-Light.otf */,
+				77F2DE581B51FEFD00B42779 /* ProximaNova-Regular.otf */,
+				77F2DE591B51FEFD00B42779 /* ProximaNova-SemiBold.otf */,
+			);
+			path = "CustomFont Files";
+			sourceTree = "<group>";
+		};
+		77F2DE621B52020200B42779 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE631B5202E700B42779 /* UIHelper.h */,
+				77F2DE641B5202E700B42779 /* UIHelper.m */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		77F2DE661B5204AC00B42779 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE671B5204DA00B42779 /* Constants.h */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		77F2DE691B520A5900B42779 /* VideoEditorScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE701B520ACD00B42779 /* VideoEditorScreenViewController.h */,
+				77F2DE711B520ACD00B42779 /* VideoEditorScreenViewController.m */,
+				77F2DE721B520ACD00B42779 /* VideoEditorScreenViewController.xib */,
+			);
+			path = VideoEditorScreenViewController;
+			sourceTree = "<group>";
+		};
+		77F2DE6A1B520A5900B42779 /* WelcomeScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE6B1B520A5900B42779 /* WelcomeScreenViewController.h */,
+				77F2DE6C1B520A5900B42779 /* WelcomeScreenViewController.m */,
+				77F2DE6D1B520A5900B42779 /* WelcomeScreenViewController.xib */,
+			);
+			path = WelcomeScreenViewController;
+			sourceTree = "<group>";
+		};
+		77F2DE781B5222B200B42779 /* Video Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE791B5222B200B42779 /* SampleVideoForDemo.mp4 */,
+			);
+			name = "Video Resources";
+			path = "Video Resource";
+			sourceTree = "<group>";
+		};
+		77F2DE7A1B5222B200B42779 /* Image Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE7B1B5222B200B42779 /* welcomeScreenBackground.jpg */,
+				77F2DE7C1B5222B200B42779 /* welcomeScreenBackground@2x.jpg */,
+			);
+			name = "Image Resources";
+			path = "Image Resource";
+			sourceTree = "<group>";
+		};
+		77F2DE801B52359F00B42779 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */,
+				77F2DE761B521D0300B42779 /* AVFoundation.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		77F2DE8C1B5236E800B42779 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77F2DE921B5236E800B42779 /* libGPUImage.a */,
+				77F2DE941B5236E800B42779 /* GPUImage.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +355,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				77F2DE961B52372B00B42779 /* PBXTargetDependency */,
 			);
 			name = "MobiFirst Video Filter POC";
 			productName = "MobiFirst Video Filter POC";
@@ -221,6 +409,12 @@
 			mainGroup = 7778D5A21B47DE8D00745011;
 			productRefGroup = 7778D5AC1B47DE8D00745011 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 77F2DE8C1B5236E800B42779 /* Products */;
+					ProjectRef = 77F2DE8B1B5236E800B42779 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7778D5AA1B47DE8D00745011 /* MobiFirst Video Filter POC */,
@@ -229,13 +423,38 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		77F2DE921B5236E800B42779 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 77F2DE911B5236E800B42779 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77F2DE941B5236E800B42779 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 77F2DE931B5236E800B42779 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		7778D5A91B47DE8D00745011 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7778D5BA1B47DE8D00745011 /* Main.storyboard in Resources */,
 				7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */,
+				77F2DE7F1B5222B200B42779 /* welcomeScreenBackground@2x.jpg in Resources */,
+				77F2DE601B51FEFD00B42779 /* ProximaNova-Regular.otf in Resources */,
+				77F2DE7E1B5222B200B42779 /* welcomeScreenBackground.jpg in Resources */,
+				77F2DE5E1B51FEFD00B42779 /* ProximaNova-Bold.otf in Resources */,
+				77F2DE741B520ACD00B42779 /* VideoEditorScreenViewController.xib in Resources */,
+				77F2DE6F1B520A5900B42779 /* WelcomeScreenViewController.xib in Resources */,
+				77F2DE611B51FEFD00B42779 /* ProximaNova-SemiBold.otf in Resources */,
+				77F2DE7D1B5222B200B42779 /* SampleVideoForDemo.mp4 in Resources */,
+				77F2DE5F1B51FEFD00B42779 /* ProximaNova-Light.otf in Resources */,
 				7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,8 +473,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F2DE731B520ACD00B42779 /* VideoEditorScreenViewController.m in Sources */,
+				77F2DE5C1B51FEFD00B42779 /* DKCircleButton.m in Sources */,
+				77F2DE5D1B51FEFD00B42779 /* FXBlurView.m in Sources */,
 				7778D5DB1B47E00200745011 /* AppDelegate.m in Sources */,
+				77F2DE6E1B520A5900B42779 /* WelcomeScreenViewController.m in Sources */,
 				7778D5B11B47DE8D00745011 /* main.m in Sources */,
+				77F2DE651B5202E700B42779 /* UIHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,17 +499,14 @@
 			target = 7778D5AA1B47DE8D00745011 /* MobiFirst Video Filter POC */;
 			targetProxy = 7778D5C51B47DE8E00745011 /* PBXContainerItemProxy */;
 		};
+		77F2DE961B52372B00B42779 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 77F2DE951B52372B00B42779 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7778D5B81B47DE8D00745011 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7778D5B91B47DE8D00745011 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -379,6 +600,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "MobiFirst Video Filter POC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -389,6 +612,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = "MobiFirst Video Filter POC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +673,7 @@
 				7778D5D01B47DE8E00745011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7778D5D11B47DE8E00745011 /* Build configuration list for PBXNativeTarget "MobiFirst Video Filter POCTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +682,7 @@
 				7778D5D31B47DE8E00745011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

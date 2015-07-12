@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WelcomeScreenViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    WelcomeScreenViewController* welcomeScreenVCObj = [[WelcomeScreenViewController alloc] initWithNibName:@"WelcomeScreenViewController" bundle:nil];
+    UINavigationController* baseNavigationController = [[UINavigationController alloc]initWithRootViewController:welcomeScreenVCObj];
+    
+    /*Setting up navigation bar appearence*/
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    shadow.shadowColor = [UIColor clearColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor darkGrayColor],
+                                                            NSFontAttributeName:FONT_NAVIGATION_BAR_APPLICATION_BOLD,
+                                                            NSShadowAttributeName: shadow
+                                                            }];
+    
+    self.window.rootViewController = baseNavigationController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
