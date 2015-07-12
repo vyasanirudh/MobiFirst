@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoEditorScreenViewController">
@@ -16,13 +17,25 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xga-zJ-gUi">
-                    <rect key="frame" x="0.0" y="64" width="320" height="160"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeScreenBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nV0-DT-3HN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ipJ-hd-Grf">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COk-Me-ac9" customClass="FXBlurView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xga-zJ-gUi">
+                    <rect key="frame" x="0.0" y="64" width="320" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xga-zJ-gUi" secondAttribute="height" multiplier="2:1" id="fCo-jt-Vzv"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-hd-Grf">
                     <rect key="frame" x="272" y="520" width="40" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Sck-R2-xyA"/>
+                        <constraint firstAttribute="width" constant="40" id="TTt-Pk-3ov"/>
+                    </constraints>
                     <state key="normal" image="settingsIcon.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -32,12 +45,29 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ipJ-hd-Grf" secondAttribute="trailing" constant="8" id="10h-yF-HrR"/>
+                <constraint firstItem="xga-zJ-gUi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="3L6-ky-EiR"/>
+                <constraint firstAttribute="trailing" secondItem="xga-zJ-gUi" secondAttribute="trailing" id="Jfk-1j-rbD"/>
+                <constraint firstAttribute="bottom" secondItem="COk-Me-ac9" secondAttribute="bottom" id="MKy-ZC-HXl"/>
+                <constraint firstItem="nV0-DT-3HN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P2o-1k-TvJ"/>
+                <constraint firstItem="COk-Me-ac9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YEC-fU-98K"/>
+                <constraint firstAttribute="bottom" secondItem="nV0-DT-3HN" secondAttribute="bottom" id="bHL-Sz-0c5"/>
+                <constraint firstAttribute="trailing" secondItem="nV0-DT-3HN" secondAttribute="trailing" id="diy-z4-Kai"/>
+                <constraint firstItem="nV0-DT-3HN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fcL-8x-pvv"/>
+                <constraint firstItem="xga-zJ-gUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ky5-Gg-q7n"/>
+                <constraint firstAttribute="bottom" secondItem="ipJ-hd-Grf" secondAttribute="bottom" constant="8" id="nOM-CV-mxl"/>
+                <constraint firstItem="COk-Me-ac9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nif-UH-b4q"/>
+                <constraint firstAttribute="trailing" secondItem="COk-Me-ac9" secondAttribute="trailing" id="o4Z-JN-vjb"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <point key="canvasLocation" x="208" y="368"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="59" y="304"/>
         </view>
     </objects>
     <resources>
         <image name="settingsIcon.png" width="68" height="70"/>
+        <image name="welcomeScreenBackground.jpg" width="800" height="800"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
