@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
+typedef enum {
+    
+    kPulsatingAnimationOptionScale,
+    kPulsatingAnimationOptionFade
+    
+}kPulsatingAnimationOption;
 
 @interface UIHelper : NSObject
 
@@ -24,5 +32,12 @@
  * @return UIImage*
  */
 - (UIImage*)loadImageForVideoWithUrl:(NSURL*)videoUrl;
+
+/*!
+ * @discussion returns pulsating effect animation for various modes.
+ * @param kPulsatingAnimationOption pulsatingOption
+ * @return CABasicAnimation*
+ */
+- (CABasicAnimation*)pulsatingAnimationForAnimationOption:(kPulsatingAnimationOption)pulsatingOption;
 
 @end

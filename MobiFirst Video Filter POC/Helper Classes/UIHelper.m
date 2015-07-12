@@ -31,12 +31,47 @@ static UIHelper* sharedObject = nil;
     NSError *err = NULL;
     CMTime time = CMTimeMake(1, 60);
     CGImageRef imgRef = [generate copyCGImageAtTime:time actualTime:NULL error:&err];
-    NSLog(@"err==%@, imageRef==%@", err, imgRef);
     
     UIImage* imageFromGCImageRef = [[UIImage alloc] initWithCGImage:imgRef];
     
     return imageFromGCImageRef;
     
+}
+
+- (CABasicAnimation*)pulsatingAnimationForAnimationOption:(kPulsatingAnimationOption)pulsatingOption
+{
+    CABasicAnimation *theAnimation;
+    
+    switch (pulsatingOption) {
+        case kPulsatingAnimationOptionFade:
+
+            theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+            
+            theAnimation.duration=1.0;
+            theAnimation.repeatCount=HUGE_VALF;
+            theAnimation.autoreverses=YES;
+            theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+            theAnimation.toValue=[NSNumber numberWithFloat:0.0];
+
+            break;
+            
+        case kPulsatingAnimationOptionScale:
+            
+            
+            theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+            
+            theAnimation.duration=1.0;
+            theAnimation.repeatCount=HUGE_VALF;
+            theAnimation.autoreverses=YES;
+            theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+            theAnimation.toValue=[NSNumber numberWithFloat:0.5];
+            
+       default:
+            break;
+    }
+    
+    
+    return theAnimation;
 }
 
 @end

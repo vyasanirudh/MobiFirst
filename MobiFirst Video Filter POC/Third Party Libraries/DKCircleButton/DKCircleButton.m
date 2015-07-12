@@ -246,15 +246,7 @@
         
         [self.superview.layer addSublayer:circleShape];
         
-        CABasicAnimation *theAnimation;
-        
-        theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
-        theAnimation.duration=2.0;
-        theAnimation.repeatCount=HUGE_VALF;
-        theAnimation.autoreverses=YES;
-        theAnimation.fromValue=[NSNumber numberWithFloat:2.0];
-        theAnimation.toValue=[NSNumber numberWithFloat:0.0];
-        [circleShape addAnimation:theAnimation forKey:@"animateOpacity"];
+        [circleShape addAnimation:[UIHELPER pulsatingAnimationForAnimationOption:kPulsatingAnimationOptionFade] forKey:@"animateOpacity"];
     }
     else
     {

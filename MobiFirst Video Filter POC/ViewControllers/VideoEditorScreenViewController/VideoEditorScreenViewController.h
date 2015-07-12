@@ -10,4 +10,9 @@
 
 @interface VideoEditorScreenViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIImageView* videoScreenCapImageView;
+@property (nonatomic, weak) IBOutlet UIButton*    popOverControlButton;
+
+-(IBAction)popOverControlButtonAction:(UIButton*)sender;
+
 @end
