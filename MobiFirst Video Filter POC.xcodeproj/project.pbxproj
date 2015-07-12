@@ -16,6 +16,7 @@
 		77ECEAA91B52DE2B0088010E /* FilterSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ECEAA81B52DE2B0088010E /* FilterSelectionViewController.m */; };
 		77ECEAAD1B52E79D0088010E /* settingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77ECEAAB1B52E79D0088010E /* settingsIcon.png */; };
 		77ECEAAE1B52E79D0088010E /* settingsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77ECEAAC1B52E79D0088010E /* settingsIcon@2x.png */; };
+		77ECEAB21B52F8BC0088010E /* IOSKnobControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 77ECEAB11B52F8BC0088010E /* IOSKnobControl.m */; };
 		77F2DE5C1B51FEFD00B42779 /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE511B51FEFD00B42779 /* DKCircleButton.m */; };
 		77F2DE5D1B51FEFD00B42779 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2DE541B51FEFD00B42779 /* FXBlurView.m */; };
 		77F2DE5E1B51FEFD00B42779 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F2DE561B51FEFD00B42779 /* ProximaNova-Bold.otf */; };
@@ -253,6 +254,8 @@
 		77ECEAA81B52DE2B0088010E /* FilterSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSelectionViewController.m; sourceTree = "<group>"; };
 		77ECEAAB1B52E79D0088010E /* settingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon.png; sourceTree = "<group>"; };
 		77ECEAAC1B52E79D0088010E /* settingsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsIcon@2x.png"; sourceTree = "<group>"; };
+		77ECEAB01B52F8BC0088010E /* IOSKnobControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSKnobControl.h; sourceTree = "<group>"; };
+		77ECEAB11B52F8BC0088010E /* IOSKnobControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSKnobControl.m; sourceTree = "<group>"; };
 		77F2DE501B51FEFD00B42779 /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
 		77F2DE511B51FEFD00B42779 /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		77F2DE531B51FEFD00B42779 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -775,6 +778,15 @@
 			path = FilterSelectionViewController;
 			sourceTree = "<group>";
 		};
+		77ECEAAF1B52F8BC0088010E /* iOSKnobControl */ = {
+			isa = PBXGroup;
+			children = (
+				77ECEAB01B52F8BC0088010E /* IOSKnobControl.h */,
+				77ECEAB11B52F8BC0088010E /* IOSKnobControl.m */,
+			);
+			path = iOSKnobControl;
+			sourceTree = "<group>";
+		};
 		77F2DE4B1B51FEFD00B42779 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +799,7 @@
 		77F2DE4E1B51FEFD00B42779 /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				77ECEAAF1B52F8BC0088010E /* iOSKnobControl */,
 				77ECEA9D1B52DD1B0088010E /* WYPopoverController */,
 				77F2DE4F1B51FEFD00B42779 /* DKCircleButton */,
 				77F2DE521B51FEFD00B42779 /* FXBlurView */,
@@ -1601,6 +1614,7 @@
 				77F2E0AA1B52899800B42779 /* module.modulemap in Sources */,
 				77F2E0271B52899800B42779 /* GPUImageDarkenBlendFilter.m in Sources */,
 				77F2E07E1B52899800B42779 /* GPUImageRGBOpeningFilter.m in Sources */,
+				77ECEAB21B52F8BC0088010E /* IOSKnobControl.m in Sources */,
 				77F2E0741B52899800B42779 /* GPUImagePolarPixellateFilter.m in Sources */,
 				77F2E0881B52899800B42779 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
 				77F2E0831B52899800B42779 /* GPUImageSharpenFilter.m in Sources */,

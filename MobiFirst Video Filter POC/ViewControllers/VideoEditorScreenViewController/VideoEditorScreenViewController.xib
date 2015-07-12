@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoEditorScreenViewController">
             <connections>
+                <outlet property="knobControlView_1" destination="mED-G1-RjR" id="sUV-tQ-d45"/>
+                <outlet property="knobControlView_2" destination="qrJ-FY-QYE" id="WLc-Pf-AJK"/>
+                <outlet property="knobControlView_3" destination="7NE-Pd-zGc" id="r9X-Og-rqA"/>
                 <outlet property="popOverControlButton" destination="ipJ-hd-Grf" id="RoW-ez-4gV"/>
                 <outlet property="videoScreenCapImageView" destination="xga-zJ-gUi" id="i14-cP-s53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -14,24 +17,24 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeScreenBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nV0-DT-3HN">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COk-Me-ac9" customClass="FXBlurView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xga-zJ-gUi">
-                    <rect key="frame" x="0.0" y="64" width="320" height="160"/>
+                    <rect key="frame" x="0.0" y="64" width="414" height="207"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="xga-zJ-gUi" secondAttribute="height" multiplier="2:1" id="fCo-jt-Vzv"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipJ-hd-Grf">
-                    <rect key="frame" x="272" y="520" width="40" height="40"/>
+                    <rect key="frame" x="366" y="688" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Sck-R2-xyA"/>
                         <constraint firstAttribute="width" constant="40" id="TTt-Pk-3ov"/>
@@ -43,26 +46,56 @@
                         <action selector="popOverControlButtonAction:" destination="-1" eventType="touchUpInside" id="Tm2-ta-N3Z"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-Pd-zGc">
+                    <rect key="frame" x="162" y="427" width="90" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="7qs-Xh-Cwj"/>
+                        <constraint firstAttribute="height" constant="90" id="f5A-sa-xU6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrJ-FY-QYE">
+                    <rect key="frame" x="307" y="305" width="90" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="1ON-w7-D1D"/>
+                        <constraint firstAttribute="width" constant="90" id="O7e-tX-mUm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mED-G1-RjR">
+                    <rect key="frame" x="17" y="305" width="90" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="hic-cX-HJU"/>
+                        <constraint firstAttribute="width" constant="90" id="x60-U6-k6e"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ipJ-hd-Grf" secondAttribute="trailing" constant="8" id="10h-yF-HrR"/>
                 <constraint firstItem="xga-zJ-gUi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="3L6-ky-EiR"/>
+                <constraint firstItem="mED-G1-RjR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="EXm-pd-xdj"/>
                 <constraint firstAttribute="trailing" secondItem="xga-zJ-gUi" secondAttribute="trailing" id="Jfk-1j-rbD"/>
                 <constraint firstAttribute="bottom" secondItem="COk-Me-ac9" secondAttribute="bottom" id="MKy-ZC-HXl"/>
                 <constraint firstItem="nV0-DT-3HN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P2o-1k-TvJ"/>
+                <constraint firstAttribute="centerX" secondItem="7NE-Pd-zGc" secondAttribute="centerX" id="Ug3-rP-Sud"/>
+                <constraint firstItem="7NE-Pd-zGc" firstAttribute="top" secondItem="xga-zJ-gUi" secondAttribute="bottom" constant="156" id="UzR-up-Khk"/>
                 <constraint firstItem="COk-Me-ac9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YEC-fU-98K"/>
                 <constraint firstAttribute="bottom" secondItem="nV0-DT-3HN" secondAttribute="bottom" id="bHL-Sz-0c5"/>
                 <constraint firstAttribute="trailing" secondItem="nV0-DT-3HN" secondAttribute="trailing" id="diy-z4-Kai"/>
+                <constraint firstAttribute="trailing" secondItem="qrJ-FY-QYE" secondAttribute="trailing" constant="17" id="eC0-Wz-egr"/>
+                <constraint firstItem="mED-G1-RjR" firstAttribute="top" secondItem="xga-zJ-gUi" secondAttribute="bottom" constant="34" id="eV6-xh-1oj"/>
                 <constraint firstItem="nV0-DT-3HN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fcL-8x-pvv"/>
+                <constraint firstItem="qrJ-FY-QYE" firstAttribute="top" secondItem="xga-zJ-gUi" secondAttribute="bottom" constant="34" id="i7S-y6-EW9"/>
                 <constraint firstItem="xga-zJ-gUi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ky5-Gg-q7n"/>
                 <constraint firstAttribute="bottom" secondItem="ipJ-hd-Grf" secondAttribute="bottom" constant="8" id="nOM-CV-mxl"/>
                 <constraint firstItem="COk-Me-ac9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nif-UH-b4q"/>
                 <constraint firstAttribute="trailing" secondItem="COk-Me-ac9" secondAttribute="trailing" id="o4Z-JN-vjb"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="59" y="304"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="147" y="319"/>
         </view>
     </objects>
     <resources>
