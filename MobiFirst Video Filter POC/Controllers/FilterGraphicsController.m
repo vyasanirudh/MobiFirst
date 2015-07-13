@@ -36,7 +36,7 @@ static FilterGraphicsController* sharedObject = nil;
 }
 
 -(void)applyFilterForPreviewToImageView:(UIImageView *)imageViewForPreview andFilterType:(kSelectionType)filterType
-{
+{ 
     
 }
 
