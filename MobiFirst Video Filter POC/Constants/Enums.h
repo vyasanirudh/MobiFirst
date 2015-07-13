@@ -19,7 +19,7 @@ typedef enum
     kSelectionTypeSaturation,
     kSelectionTypeBrightness,
     kSelectionTypeHue,
-    kSelectionTypeRGBs
+    kSelectionTypeRGB
 }kSelectionType;
 
 #endif

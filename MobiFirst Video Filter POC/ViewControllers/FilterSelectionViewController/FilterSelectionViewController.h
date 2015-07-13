@@ -12,7 +12,7 @@
 
 @protocol FilterSelectionDelegate <NSObject>
 
-- (void) filterSelectionTableTappedOnCellWithTitle:(NSString*)filterOrSettingSelectedString;
+- (void) filterSelectionTableTappedOnCellWithTitle:(NSString*)filterOrSettingSelectedString andFilterType:(kSelectionType)filterType;
 
 @end
 

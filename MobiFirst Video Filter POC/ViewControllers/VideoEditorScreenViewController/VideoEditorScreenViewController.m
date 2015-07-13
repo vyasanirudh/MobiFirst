@@ -9,6 +9,7 @@
 #import "VideoEditorScreenViewController.h"
 #import "WYPopoverController.h"
 #import "FilterSelectionViewController.h"
+#import "FilterGraphicsController.h"
 
 @interface VideoEditorScreenViewController ()<WYPopoverControllerDelegate,FilterSelectionDelegate>
 {
@@ -28,7 +29,8 @@
     UIImage* image = [UIHELPER loadImageForVideoWithUrl:videoUrlForDemoVideoAsset];
     _videoScreenCapImageView.image = image;
     
-    [self setUpTheKnobViews];
+    [_selectedFilterImageView setHidden:YES];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -146,93 +148,38 @@
     }
 }
 
-#pragma mark - Helper method to setup the knob views
-
--(void) setUpTheKnobViews
-{
-    self.knobControl_1 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_1.bounds];
-    self.knobControl_1.mode = IKCModeContinuous;
-    self.knobControl_1.shadowOpacity = 1.0;
-    self.knobControl_1.clipsToBounds = NO;
-    // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
-    self.knobControl_1.knobRadius = 0.475 * self.knobControl_1.bounds.size.width;
-    
-    [self.knobControl_1 setTintColor:[UIColor lightGrayColor]];
-    
-    [self.knobControl_1 setTag:100];
-    
-    // arrange to be notified whenever the knob turns
-    [self.knobControl_1 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    // Now hook it up to the demo
-    [self.knobControlView_1 addSubview:self.knobControl_1];
-    
-    self.knobControl_2 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_2.bounds];
-    self.knobControl_2.mode = IKCModeContinuous;
-    self.knobControl_2.shadowOpacity = 1.0;
-    self.knobControl_2.clipsToBounds = NO;
-    // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
-    self.knobControl_2.knobRadius = 0.475 * self.knobControl_2.bounds.size.width;
-    
-    [self.knobControl_2 setTintColor:[UIColor lightGrayColor]];
-    
-    [self.knobControl_2 setTag:101];
-    
-    // arrange to be notified whenever the knob turns
-    [self.knobControl_2 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    // Now hook it up to the demo
-    [self.knobControlView_2 addSubview:self.knobControl_2];
-    
-    self.knobControl_3 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_3.bounds];
-    self.knobControl_3.mode = IKCModeContinuous;
-    self.knobControl_3.shadowOpacity = 1.0;
-    self.knobControl_3.clipsToBounds = NO;
-    // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
-    self.knobControl_3.knobRadius = 0.475 * self.knobControl_3.bounds.size.width;
-    
-    [self.knobControl_3 setTintColor:[UIColor lightGrayColor]];
-    
-    [self.knobControl_3 setTag:102];
-    
-    // arrange to be notified whenever the knob turns
-    [self.knobControl_3 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    [self.knobControlView_3 addSubview:self.knobControl_3];
-
-    [self updateKnobProperties];
-}
-
 #pragma mark - Knob control callback
-- (void)knobPositionChanged:(IOSKnobControl*)sender
+- (IBAction)sliderValueChanged:(UISlider *)slider
 {
+    FilterGraphicsController* localFilterControllerObj = FILTER_GRAPHICS_CONTROLLER_OBJECT;
     
+    if (slider.tag == 100) {
+        
+        [localFilterControllerObj changeValueAccordingToRedSlider:slider.value];
+        
+    } else if (slider.tag == 101)
+    {
+        [localFilterControllerObj changeValueAccordingToGreenSlider:slider.value];
+        
+    } else if (slider.tag == 102)
+    {
+        [localFilterControllerObj changeValueAccordingToBlueSlider:slider.value];
+        
+    } else if (slider.tag == 103)
+    {
+        [localFilterControllerObj changeValueAccordingToGenericSlider:slider.value];
+        
+    }
+    
+    localFilterControllerObj = nil;
 }
 
-- (void)updateKnobProperties
-{
-    self.knobControl_1.circular = YES;
-    self.knobControl_1.min = 0;
-    self.knobControl_1.max = 100;
-    self.knobControl_1.clockwise = YES;
-    self.knobControl_1.position = self.knobControl_1.position;
-    
-    self.knobControl_2.circular = YES;
-    self.knobControl_2.min = 0;
-    self.knobControl_2.max = 100;
-    self.knobControl_2.clockwise = YES;
-    self.knobControl_2.position = self.knobControl_2.position;
-    
-    self.knobControl_3.circular = YES;
-    self.knobControl_3.min = 0;
-    self.knobControl_3.max = 100;
-    self.knobControl_3.clockwise = YES;
-    self.knobControl_3.position = self.knobControl_3.position;
-}
+
+
 
 #pragma mark - Filter Selection Delegate Implementation
 
--(void)filterSelectionTableTappedOnCellWithTitle:(NSString *)filterOrSettingSelectedString
+-(void)filterSelectionTableTappedOnCellWithTitle:(NSString *)filterOrSettingSelectedString andFilterType:(kSelectionType)filterType
 {
     __weak typeof(self) this = self;
     
@@ -245,7 +192,17 @@
         [this buttonShouldAnimateForScale:NO andButton:_popOverControlButton];
         
     }];
+    
     [_selectedOptionLabel setText:filterOrSettingSelectedString];
+    
+    [_videoScreenCapImageView setHidden:YES];
+    [_selectedFilterImageView setHidden:NO];
+
+    FilterGraphicsController* localFilterControllerObj = FILTER_GRAPHICS_CONTROLLER_OBJECT;
+    
+    [localFilterControllerObj applyFilterForPreviewToImageView:_selectedFilterImageView andFilterType:filterType andImage:_videoScreenCapImageView.image];
+    
+    localFilterControllerObj = nil;
 }
 
 @end

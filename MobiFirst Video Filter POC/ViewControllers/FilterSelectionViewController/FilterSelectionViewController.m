@@ -90,8 +90,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.filterSelectionDelegate respondsToSelector:@selector(filterSelectionTableTappedOnCellWithTitle:)]) {
-        [self.filterSelectionDelegate filterSelectionTableTappedOnCellWithTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+    if ([self.filterSelectionDelegate respondsToSelector:@selector(filterSelectionTableTappedOnCellWithTitle:andFilterType:)]) {
+        [self.filterSelectionDelegate filterSelectionTableTappedOnCellWithTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text andFilterType:[FILTER_GRAPHICS_CONTROLLER_OBJECT getTypeForFilterName:[tableView cellForRowAtIndexPath:indexPath].textLabel.text]];
     }
 }
 

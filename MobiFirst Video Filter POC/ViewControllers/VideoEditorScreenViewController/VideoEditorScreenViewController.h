@@ -8,23 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "IOSKnobControl.h"
+#import "GPUImage.h"
 
 @interface VideoEditorScreenViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UIImageView*   videoScreenCapImageView;
+@property (nonatomic, weak) IBOutlet UIImageView*        videoScreenCapImageView;
 
-@property (nonatomic, weak) IBOutlet UIButton*      popOverControlButton;
+@property (nonatomic, weak) IBOutlet UIButton*           popOverControlButton;
 
-@property (nonatomic, weak) IBOutlet UIView*        knobControlView_1;
-@property (nonatomic, weak) IBOutlet UIView*        knobControlView_2;
-@property (nonatomic, weak) IBOutlet UIView*        knobControlView_3;
+@property (nonatomic, weak) IBOutlet UILabel*            selectedOptionLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel*       selectedOptionLabel;
+@property (nonatomic, weak) IBOutlet GPUImageView*       selectedFilterImageView;
 
-@property (nonatomic, strong) IOSKnobControl* knobControl_1;
-@property (nonatomic, strong) IOSKnobControl* knobControl_2;
-@property (nonatomic, strong) IOSKnobControl* knobControl_3;
+@property (nonatomic, weak) IBOutlet UISlider*           genericSliderOutlet;
+@property (nonatomic, weak) IBOutlet UISlider*           redSliderOutlet;
+@property (nonatomic, weak) IBOutlet UISlider*           greenSliderOutlet;
+@property (nonatomic, weak) IBOutlet UISlider*           blueSliderOutlet;
 
 -(IBAction)popOverControlButtonAction:(UIButton*)sender;
+
+-(IBAction)sliderValueChanged:(UISlider*)slider;
 
 @end
