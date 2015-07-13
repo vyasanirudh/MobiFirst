@@ -7,6 +7,7 @@
 //
 
 #import "FilterSelectionViewController.h"
+#import "FilterGraphicsController.h"
 
 @interface FilterSelectionViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     CGFloat _preferredContentHeightForSelf = self.preferredContentSize.height;
     
@@ -39,22 +42,32 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[FILTER_GRAPHICS_CONTROLLER_OBJECT filterSelectionOptionsArray] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        
+        return @"Filters";
+    }
+    else
+    {
+        return @"Settings";
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return [[[FILTER_GRAPHICS_CONTROLLER_OBJECT filterSelectionOptionsArray] objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //UITableViewCell* cell = [aTableView dequeueReusableCellWithIdentifier:@"WYSettingsTableViewCell" forIndexPath:indexPath];
-    
-    UITableViewCell* cell = [aTableView dequeueReusableCellWithIdentifier:@"WYSettingsTableViewCell"];
+    UITableViewCell* cell = [aTableView dequeueReusableCellWithIdentifier:@"FilterSelectionCell"];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WYSettingsTableViewCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FilterSelectionCell"];
     }
     
     [self updateCell:cell atIndexPath:indexPath];
@@ -64,8 +77,22 @@
 
 - (void)updateCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath
 {
-    cell.textLabel.text = @"Compression";
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    FilterGraphicsController* filterGraphicsSharedLocalCopy = FILTER_GRAPHICS_CONTROLLER_OBJECT;
+    
+    NSString* textForCellTitle = [[[filterGraphicsSharedLocalCopy filterSelectionOptionsArray] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = textForCellTitle;
+    
+    textForCellTitle = nil;
+    
+    filterGraphicsSharedLocalCopy = nil;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.filterSelectionDelegate respondsToSelector:@selector(filterSelectionTableTappedOnCellWithTitle:)]) {
+        [self.filterSelectionDelegate filterSelectionTableTappedOnCellWithTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+    }
 }
 
 @end

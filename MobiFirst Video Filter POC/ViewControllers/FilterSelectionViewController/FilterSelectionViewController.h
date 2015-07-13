@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark - Custom Protocol
+
+@protocol FilterSelectionDelegate <NSObject>
+
+- (void) filterSelectionTableTappedOnCellWithTitle:(NSString*)filterOrSettingSelectedString;
+
+@end
+
 @interface FilterSelectionViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView* filterSelectionOptionTableView;
+
+/*Preping the setters and getters for the custom protocol defined for the class.*/
+@property (nonatomic, strong) id <FilterSelectionDelegate> filterSelectionDelegate;
 
 @end

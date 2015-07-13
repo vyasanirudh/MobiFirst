@@ -242,7 +242,7 @@
         circleShape.fillColor = [UIColor clearColor].CGColor;
         circleShape.opacity = 0;
         circleShape.strokeColor = self.borderColor.CGColor;
-        circleShape.lineWidth = 5.0;
+        circleShape.lineWidth = 15.0;
         
         [self.superview.layer addSublayer:circleShape];
         
@@ -253,5 +253,7 @@
         
     }
 }
+
+
 
 @end

@@ -10,7 +10,7 @@
 #import "WYPopoverController.h"
 #import "FilterSelectionViewController.h"
 
-@interface VideoEditorScreenViewController ()<WYPopoverControllerDelegate>
+@interface VideoEditorScreenViewController ()<WYPopoverControllerDelegate,FilterSelectionDelegate>
 {
     WYPopoverController* popOverControllerObj;
     CGAffineTransform popOverControlButtonOriginalTransform;
@@ -71,6 +71,8 @@
         
         FilterSelectionViewController *settingsViewController = [[FilterSelectionViewController alloc]init];
         
+        [settingsViewController setFilterSelectionDelegate:self];
+        
         if ([settingsViewController respondsToSelector:@selector(setPreferredContentSize:)]) {
             settingsViewController.preferredContentSize = CGSizeMake(280, 280);             // iOS 7
         }
@@ -81,7 +83,7 @@
 #pragma clang diagnostic pop
         }
         
-        settingsViewController.title = @"Filters";
+        settingsViewController.title = @"Filters and Settings";
         [settingsViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)]];
         
         settingsViewController.modalInPopover = NO;
@@ -148,18 +150,55 @@
 
 -(void) setUpTheKnobViews
 {
-    self.knobControl = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_1.bounds];
-    self.knobControl.mode = IKCModeContinuous;
-    self.knobControl.shadowOpacity = 1.0;
-    self.knobControl.clipsToBounds = NO;
+    self.knobControl_1 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_1.bounds];
+    self.knobControl_1.mode = IKCModeContinuous;
+    self.knobControl_1.shadowOpacity = 1.0;
+    self.knobControl_1.clipsToBounds = NO;
     // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
-    self.knobControl.knobRadius = 0.475 * self.knobControl.bounds.size.width;
+    self.knobControl_1.knobRadius = 0.475 * self.knobControl_1.bounds.size.width;
+    
+    [self.knobControl_1 setTintColor:[UIColor lightGrayColor]];
+    
+    [self.knobControl_1 setTag:100];
     
     // arrange to be notified whenever the knob turns
-    [self.knobControl addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.knobControl_1 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
     
     // Now hook it up to the demo
-    [self.knobControlView_1 addSubview:self.knobControl];
+    [self.knobControlView_1 addSubview:self.knobControl_1];
+    
+    self.knobControl_2 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_2.bounds];
+    self.knobControl_2.mode = IKCModeContinuous;
+    self.knobControl_2.shadowOpacity = 1.0;
+    self.knobControl_2.clipsToBounds = NO;
+    // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
+    self.knobControl_2.knobRadius = 0.475 * self.knobControl_2.bounds.size.width;
+    
+    [self.knobControl_2 setTintColor:[UIColor lightGrayColor]];
+    
+    [self.knobControl_2 setTag:101];
+    
+    // arrange to be notified whenever the knob turns
+    [self.knobControl_2 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    // Now hook it up to the demo
+    [self.knobControlView_2 addSubview:self.knobControl_2];
+    
+    self.knobControl_3 = [[IOSKnobControl alloc] initWithFrame:self.knobControlView_3.bounds];
+    self.knobControl_3.mode = IKCModeContinuous;
+    self.knobControl_3.shadowOpacity = 1.0;
+    self.knobControl_3.clipsToBounds = NO;
+    // NOTE: This is an important optimization when using a custom circular knob image with a shadow.
+    self.knobControl_3.knobRadius = 0.475 * self.knobControl_3.bounds.size.width;
+    
+    [self.knobControl_3 setTintColor:[UIColor lightGrayColor]];
+    
+    [self.knobControl_3 setTag:102];
+    
+    // arrange to be notified whenever the knob turns
+    [self.knobControl_3 addTarget:self action:@selector(knobPositionChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.knobControlView_3 addSubview:self.knobControl_3];
 
     [self updateKnobProperties];
 }
@@ -172,42 +211,41 @@
 
 - (void)updateKnobProperties
 {
-    self.knobControl.circular = YES;
-    self.knobControl.min = 0;
-    self.knobControl.max = 100;
-    self.knobControl.clockwise = YES;
+    self.knobControl_1.circular = YES;
+    self.knobControl_1.min = 0;
+    self.knobControl_1.max = 100;
+    self.knobControl_1.clockwise = YES;
+    self.knobControl_1.position = self.knobControl_1.position;
     
-    if ([self.knobControl respondsToSelector:@selector(setTintColor:)]) {
-        // configure the tint color (iOS 7+ only)
-        
-        // minControl.tintColor = maxControl.tintColor = self.knobControl.tintColor = [UIColor greenColor];
-        // minControl.tintColor = maxControl.tintColor = self.knobControl.tintColor = [UIColor blackColor];
-        // minControl.tintColor = maxControl.tintColor = self.knobControl.tintColor = [UIColor whiteColor];
-        
-        // minControl.tintColor = maxControl.tintColor = self.knobControl.tintColor = [UIColor colorWithRed:0.627 green:0.125 blue:0.941 alpha:1.0];
-//        minControl.tintColor = maxControl.tintColor = self.knobControl.tintColor = [UIColor colorWithHue:0.5 saturation:1.0 brightness:1.0 alpha:1.0];
-    }
-    else {
-        // can still customize piecemeal below iOS 7
-        UIColor* titleColor = [UIColor whiteColor];
-//        [minControl setTitleColor:titleColor forState:UIControlStateNormal];
-//        [maxControl setTitleColor:titleColor forState:UIControlStateNormal];
-        [self.knobControl setTitleColor:titleColor forState:UIControlStateNormal];
-    }
+    self.knobControl_2.circular = YES;
+    self.knobControl_2.min = 0;
+    self.knobControl_2.max = 100;
+    self.knobControl_2.clockwise = YES;
+    self.knobControl_2.position = self.knobControl_2.position;
     
-//    minControl.gesture = maxControl.gesture = self.knobControl.gesture = IKCGestureOneFingerRotation + self.gestureControl.selectedSegmentIndex;
-//    
-//    minControl.clockwise = maxControl.clockwise = self.knobControl.clockwise;
-//    
-//    minControl.position = minControl.position;
-//    maxControl.position = maxControl.position;
-    
-    // Good idea to do this to make the knob reset itself after changing certain params.
-    self.knobControl.position = self.knobControl.position;
-    
-//    minControl.enabled = maxControl.enabled = self.circularSwitch.on == NO;
+    self.knobControl_3.circular = YES;
+    self.knobControl_3.min = 0;
+    self.knobControl_3.max = 100;
+    self.knobControl_3.clockwise = YES;
+    self.knobControl_3.position = self.knobControl_3.position;
 }
 
+#pragma mark - Filter Selection Delegate Implementation
 
+-(void)filterSelectionTableTappedOnCellWithTitle:(NSString *)filterOrSettingSelectedString
+{
+    __weak typeof(self) this = self;
+    
+    [popOverControllerObj dismissPopoverAnimated:YES completion:^{
+       
+        popOverControllerObj.delegate = nil;
+        popOverControllerObj = nil;
+        
+        [_popOverControlButton setSelected:NO];
+        [this buttonShouldAnimateForScale:NO andButton:_popOverControlButton];
+        
+    }];
+    [_selectedOptionLabel setText:filterOrSettingSelectedString];
+}
 
 @end

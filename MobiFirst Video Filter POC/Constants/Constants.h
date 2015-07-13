@@ -21,5 +21,17 @@
 
 /*Shared Instance defines*/
 #define UIHELPER                                [UIHelper sharedInstance]
+#define FILTER_GRAPHICS_CONTROLLER_OBJECT       [FilterGraphicsController sharedInstance]
+
+/*Filter Strings*/
+
+#define FILTER_POLKA                              @"Polka Dot Filter"
+#define FILTER_MOSAIC                             @"Mosaic Filter"
+#define FILTER_KAWAHARA                           @"Kawahara"
+#define SETTINGS_CONTRAST                         @"Contrast"
+#define SETTINGS_SATURATION                       @"Saturation"
+#define SETTINGS_BRIGHTNESS                       @"Brightness"
+#define SETTINGS_HUE                              @"Hue"
+#define SETTINGS_RGB                              @"RGB"
 
 #endif

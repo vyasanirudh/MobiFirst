@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772CBB9F1B53C8F4007124EE /* FilterGraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */; };
 		7778D5B11B47DE8D00745011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B01B47DE8D00745011 /* main.m */; };
 		7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BB1B47DE8D00745011 /* Images.xcassets */; };
 		7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */; };
@@ -238,6 +239,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		772CBB9D1B53C8F4007124EE /* FilterGraphicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterGraphicsController.h; sourceTree = "<group>"; };
+		772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterGraphicsController.m; sourceTree = "<group>"; };
+		772CBBA01B53CA15007124EE /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -654,12 +658,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		772CBB9C1B53C8E5007124EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				772CBB9D1B53C8F4007124EE /* FilterGraphicsController.h */,
+				772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		7778D5A21B47DE8D00745011 = {
 			isa = PBXGroup;
 			children = (
-				77F2DE9B1B52899600B42779 /* Frameworks */,
 				7778D5AD1B47DE8D00745011 /* MobiFirst Video Filter POC */,
 				7778D5C71B47DE8E00745011 /* MobiFirst Video Filter POCTests */,
+				77F2DE9B1B52899600B42779 /* Frameworks */,
 				7778D5AC1B47DE8D00745011 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -678,7 +691,7 @@
 			children = (
 				7778D5D71B47E00200745011 /* AppDelegate */,
 				77F2DE661B5204AC00B42779 /* Constants */,
-				7778D5D41B47E00200745011 /* Controllers */,
+				772CBB9C1B53C8E5007124EE /* Controllers */,
 				77F2DE551B51FEFD00B42779 /* CustomFont Files */,
 				7778D5D61B47E00200745011 /* Handlers */,
 				77F2DE621B52020200B42779 /* Helper Classes */,
@@ -718,13 +731,6 @@
 				7778D5C91B47DE8E00745011 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7778D5D41B47E00200745011 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7778D5D51B47E00200745011 /* Models */ = {
@@ -849,6 +855,7 @@
 			isa = PBXGroup;
 			children = (
 				77F2DE671B5204DA00B42779 /* Constants.h */,
+				772CBBA01B53CA15007124EE /* Enums.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1445,6 +1452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772CBB9F1B53C8F4007124EE /* FilterGraphicsController.m in Sources */,
 				77F2E06A1B52899800B42779 /* GPUImageOpacityFilter.m in Sources */,
 				77F2E09F1B52899800B42779 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				77F2E0921B52899800B42779 /* GPUImageTextureInput.m in Sources */,
