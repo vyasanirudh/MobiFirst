@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		772CBB9F1B53C8F4007124EE /* FilterGraphicsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */; };
+		772CBBAC1B551B9F007124EE /* DocumentsDirectoryContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBAB1B551B9F007124EE /* DocumentsDirectoryContentController.m */; };
+		772CBBB21B553E24007124EE /* VideoContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBB01B553E24007124EE /* VideoContentTableViewController.m */; };
+		772CBBB31B553E24007124EE /* VideoContentTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772CBBB11B553E24007124EE /* VideoContentTableViewController.xib */; };
+		772CBBB61B554380007124EE /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBB51B554380007124EE /* VideoPlayerViewController.m */; };
 		7778D5B11B47DE8D00745011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B01B47DE8D00745011 /* main.m */; };
 		7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BB1B47DE8D00745011 /* Images.xcassets */; };
 		7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */; };
@@ -242,6 +246,13 @@
 		772CBB9D1B53C8F4007124EE /* FilterGraphicsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterGraphicsController.h; sourceTree = "<group>"; };
 		772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterGraphicsController.m; sourceTree = "<group>"; };
 		772CBBA01B53CA15007124EE /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
+		772CBBAA1B551B9F007124EE /* DocumentsDirectoryContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentsDirectoryContentController.h; sourceTree = "<group>"; };
+		772CBBAB1B551B9F007124EE /* DocumentsDirectoryContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentsDirectoryContentController.m; sourceTree = "<group>"; };
+		772CBBAF1B553E24007124EE /* VideoContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoContentTableViewController.h; sourceTree = "<group>"; };
+		772CBBB01B553E24007124EE /* VideoContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoContentTableViewController.m; sourceTree = "<group>"; };
+		772CBBB11B553E24007124EE /* VideoContentTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoContentTableViewController.xib; sourceTree = "<group>"; };
+		772CBBB41B554380007124EE /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		772CBBB51B554380007124EE /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -661,10 +672,31 @@
 		772CBB9C1B53C8E5007124EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				772CBBAA1B551B9F007124EE /* DocumentsDirectoryContentController.h */,
+				772CBBAB1B551B9F007124EE /* DocumentsDirectoryContentController.m */,
 				772CBB9D1B53C8F4007124EE /* FilterGraphicsController.h */,
 				772CBB9E1B53C8F4007124EE /* FilterGraphicsController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		772CBBAD1B553DE5007124EE /* VideoPlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				772CBBB41B554380007124EE /* VideoPlayerViewController.h */,
+				772CBBB51B554380007124EE /* VideoPlayerViewController.m */,
+			);
+			path = VideoPlayerViewController;
+			sourceTree = "<group>";
+		};
+		772CBBAE1B553DE5007124EE /* VideoContentTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				772CBBAF1B553E24007124EE /* VideoContentTableViewController.h */,
+				772CBBB01B553E24007124EE /* VideoContentTableViewController.m */,
+				772CBBB11B553E24007124EE /* VideoContentTableViewController.xib */,
+			);
+			path = VideoContentTableViewController;
 			sourceTree = "<group>";
 		};
 		7778D5A21B47DE8D00745011 = {
@@ -760,7 +792,9 @@
 			isa = PBXGroup;
 			children = (
 				77ECEAA61B52DE0B0088010E /* FilterSelectionViewController */,
+				772CBBAE1B553DE5007124EE /* VideoContentTableViewController */,
 				77F2DE691B520A5900B42779 /* VideoEditorScreenViewController */,
+				772CBBAD1B553DE5007124EE /* VideoPlayerViewController */,
 				77F2DE6A1B520A5900B42779 /* WelcomeScreenViewController */,
 			);
 			path = ViewControllers;
@@ -1421,6 +1455,7 @@
 				77F2DE7F1B5222B200B42779 /* welcomeScreenBackground@2x.jpg in Resources */,
 				77F2DE601B51FEFD00B42779 /* ProximaNova-Regular.otf in Resources */,
 				77F2E0051B52899800B42779 /* lookup.png in Resources */,
+				772CBBB31B553E24007124EE /* VideoContentTableViewController.xib in Resources */,
 				77F2DE7E1B5222B200B42779 /* welcomeScreenBackground.jpg in Resources */,
 				77F2E0091B52899800B42779 /* lookup_soft_elegance_2.png in Resources */,
 				77F2DE5E1B51FEFD00B42779 /* ProximaNova-Bold.otf in Resources */,
@@ -1548,6 +1583,7 @@
 				77F2E06C1B52899800B42779 /* GPUImageOutput.m in Sources */,
 				77F2E0771B52899800B42779 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				77F2E0541B52899800B42779 /* GPUImageLinearBurnBlendFilter.m in Sources */,
+				772CBBAC1B551B9F007124EE /* DocumentsDirectoryContentController.m in Sources */,
 				77F2E00F1B52899800B42779 /* GPUImageAlphaBlendFilter.m in Sources */,
 				77F2E08D1B52899800B42779 /* GPUImageSphereRefractionFilter.m in Sources */,
 				7778D5DB1B47E00200745011 /* AppDelegate.m in Sources */,
@@ -1570,6 +1606,7 @@
 				77F2E0A81B52899800B42779 /* GPUImageZoomBlurFilter.m in Sources */,
 				77F2E07A1B52899800B42779 /* GPUImageRGBClosingFilter.m in Sources */,
 				77F2E09B1B52899800B42779 /* GPUImageTransformFilter.m in Sources */,
+				772CBBB21B553E24007124EE /* VideoContentTableViewController.m in Sources */,
 				77F2E0421B52899800B42779 /* GPUImageHazeFilter.m in Sources */,
 				77F2E0AD1B52899800B42779 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				77F2E0501B52899800B42779 /* GPUImageLanczosResamplingFilter.m in Sources */,
@@ -1584,6 +1621,7 @@
 				77F2E0141B52899800B42779 /* GPUImageBoxBlurFilter.m in Sources */,
 				77F2E0871B52899800B42779 /* GPUImageSmoothToonFilter.m in Sources */,
 				7778D5B11B47DE8D00745011 /* main.m in Sources */,
+				772CBBB61B554380007124EE /* VideoPlayerViewController.m in Sources */,
 				77F2E07B1B52899800B42779 /* GPUImageRGBDilationFilter.m in Sources */,
 				77F2E0611B52899800B42779 /* GPUImageMosaicFilter.m in Sources */,
 				77F2E0521B52899800B42779 /* GPUImageLevelsFilter.m in Sources */,

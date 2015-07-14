@@ -38,7 +38,7 @@ static FilterGraphicsController* sharedObject = nil;
 -(void)applyFilterForPreviewToImageView:(GPUImageView *)imageViewForPreview andFilterType:(kSelectionType)filterType andImage:(UIImage*)selectedImage
 {
     [self setFilterTypeForSettingsOrFilterSelectedType:filterType];
-    
+      
     sourcePicture = nil;
     
     sourcePicture = [[GPUImagePicture alloc] initWithImage:selectedImage smoothlyScaleOutput:YES];
@@ -324,11 +324,11 @@ static FilterGraphicsController* sharedObject = nil;
     [filter addTarget:filterView];
     
     // In addition to displaying to the screen, write out a processed version of the movie to disk
-    NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/SampleVideoForDemoAfterFilter.mp4"];
+    NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@",[self getVideoFileNameForVideoWithTimeStamp]]];
     unlink([pathToMovie UTF8String]); // If a file already exists, AVAssetWriter won't let you record new frames, so delete the old movie
     NSURL *movieURL = [NSURL fileURLWithPath:pathToMovie];
     
-    movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:movieURL size:CGSizeMake(640.0, 480.0)];
+    movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:movieURL size:CGSizeMake(640.0, 368.0)];
     [filter addTarget:movieWriter];
     
     // Configure this for video from the movie file, where we want to preserve all video frames and audio samples
@@ -350,6 +350,25 @@ static FilterGraphicsController* sharedObject = nil;
 - (void)movieRecordingFailedWithError:(NSError*)error
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:MOVIE_CONVERSION_FAILED_NOTIFICATION object:nil];
+}
+
+-(NSString*)getVideoFileNameForVideoWithTimeStamp
+{
+    NSDate *localDate = [NSDate date];
+
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+    timeFormatter.dateFormat = @"HH:mm:ss";
+    
+    
+    NSString *timeString = [timeFormatter stringFromDate: localDate];
+    
+    NSString* videoFileName = [NSString stringWithFormat:@"MobiFirst_%@.mp4",timeString];
+    
+    timeString = nil;
+    timeFormatter = nil;
+    localDate = nil;
+    
+    return videoFileName;
 }
 
 

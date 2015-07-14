@@ -40,11 +40,4 @@ typedef enum {
  */
 - (CABasicAnimation*)pulsatingAnimationForAnimationOption:(kPulsatingAnimationOption)pulsatingOption;
 
-/*!
- * @discussion Adds a UIAlertView to the application window.
- * @param (NSString*) title (NSString*) bodyText (id) delegate (NSString*)okButtonTitle
- * @return void
- */
-- (void) showAnAlertViewWithTitle:(NSString*)title andBody:(NSString*)bodyText andDelegate:(id)delegate andOkButtonTitle:(NSString*)okButtonTitle;
-
 @end

@@ -25,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = TEXT_NAVIGATION_BAR_TITLE;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     NSURL* videoUrlForDemoVideoAsset = [[NSBundle mainBundle] URLForResource:@"SampleVideoForDemo" withExtension:@"mp4"];
     UIImage* image = [UIHELPER loadImageForVideoWithUrl:videoUrlForDemoVideoAsset];
     _videoScreenCapImageView.image = image;
@@ -41,7 +44,7 @@
     
     popOverControlButtonOriginalTransform = _popOverControlButton.transform;
     
-    
+    [self addObserverForNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +56,7 @@
 {
     [super viewDidDisappear:animated];
 
+    [self removeObserverForNotifications];
 }
 
 #pragma mark - Button Actions
@@ -349,12 +353,12 @@
 
 - (void)showCompletionAlert
 {
-    [UIHELPER showAnAlertViewWithTitle:@"Success!" andBody:@"Video has successfully been converted and saved." andDelegate:nil andOkButtonTitle:@"Ok"];
+    
 }
 
 - (void)showFailedAlert
 {
-    [UIHELPER showAnAlertViewWithTitle:@"Alas!" andBody:@"Video failed to convert. Some error occured." andDelegate:nil andOkButtonTitle:@"Ok"];
+    
 }
 
 @end
