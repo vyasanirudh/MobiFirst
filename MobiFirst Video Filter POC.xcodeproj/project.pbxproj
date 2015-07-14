@@ -256,7 +256,7 @@
 		772CBBB51B554380007124EE /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		772CBBB81B55495A007124EE /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		772CBBB91B55495A007124EE /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7778D5AB1B47DE8D00745011 /* Video Fun!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Fun!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7778D5BB1B47DE8D00745011 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 		7778D5AC1B47DE8D00745011 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */,
+				7778D5AB1B47DE8D00745011 /* Video Fun!.app */,
 				7778D5C41B47DE8E00745011 /* MobiFirst Video Filter POCTests.xctest */,
 			);
 			name = Products;
@@ -1377,7 +1377,7 @@
 			);
 			name = "MobiFirst Video Filter POC";
 			productName = "MobiFirst Video Filter POC";
-			productReference = 7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */;
+			productReference = 7778D5AB1B47DE8D00745011 /* Video Fun!.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7778D5C31B47DE8E00745011 /* MobiFirst Video Filter POCTests */ = {
@@ -1818,7 +1818,7 @@
 				INFOPLIST_FILE = "MobiFirst Video Filter POC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Video Fun!";
 			};
 			name = Debug;
 		};
@@ -1836,7 +1836,7 @@
 				INFOPLIST_FILE = "MobiFirst Video Filter POC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Video Fun!";
 			};
 			name = Release;
 		};
