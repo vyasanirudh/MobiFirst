@@ -315,7 +315,6 @@ static FilterGraphicsController* sharedObject = nil;
     movieFile = [[GPUImageMovie alloc] initWithURL:videoUrlForDemoVideoAsset];
     movieFile.runBenchmark = YES;
     movieFile.playAtActualSpeed = NO;
-//    filter = [[GPUImageSketchFilter alloc] init];
     
     [movieFile addTarget:filter];
     

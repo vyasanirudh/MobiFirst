@@ -16,6 +16,7 @@
 #define FONT_NAVIGATION_BAR_APPLICATION_LIGHT    [UIFont fontWithName:@"ProximaNova-Bold" size:20.0f]
 #define FONT_BUTTON_APPLICATION_SEMI_BOLD        [UIFont fontWithName:@"ProximaNova-SemiBold" size:28.0f];
 #define FONT_VIEW_BUTTON_APPLICATION_SEMI_BOLD   [UIFont fontWithName:@"ProximaNova-SemiBold" size:20.0f];
+#define FONT_TOAST_APPLICATION_SEMI_BOLD         [UIFont fontWithName:@"ProximaNova-SemiBold" size:13.0f];
 
 /*Text*/
 #define TEXT_NAVIGATION_BAR_TITLE               @"Video Fun!"

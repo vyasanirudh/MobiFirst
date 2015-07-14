@@ -12,6 +12,7 @@
 		772CBBB21B553E24007124EE /* VideoContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBB01B553E24007124EE /* VideoContentTableViewController.m */; };
 		772CBBB31B553E24007124EE /* VideoContentTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772CBBB11B553E24007124EE /* VideoContentTableViewController.xib */; };
 		772CBBB61B554380007124EE /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBB51B554380007124EE /* VideoPlayerViewController.m */; };
+		772CBBBA1B55495A007124EE /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 772CBBB91B55495A007124EE /* UIView+Toast.m */; };
 		7778D5B11B47DE8D00745011 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7778D5B01B47DE8D00745011 /* main.m */; };
 		7778D5BC1B47DE8D00745011 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BB1B47DE8D00745011 /* Images.xcassets */; };
 		7778D5BF1B47DE8D00745011 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7778D5BD1B47DE8D00745011 /* LaunchScreen.xib */; };
@@ -253,6 +254,8 @@
 		772CBBB11B553E24007124EE /* VideoContentTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoContentTableViewController.xib; sourceTree = "<group>"; };
 		772CBBB41B554380007124EE /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
 		772CBBB51B554380007124EE /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		772CBBB81B55495A007124EE /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		772CBBB91B55495A007124EE /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		7778D5AB1B47DE8D00745011 /* MobiFirst Video Filter POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobiFirst Video Filter POC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7778D5AF1B47DE8D00745011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7778D5B01B47DE8D00745011 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -699,6 +702,15 @@
 			path = VideoContentTableViewController;
 			sourceTree = "<group>";
 		};
+		772CBBB71B55495A007124EE /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				772CBBB81B55495A007124EE /* UIView+Toast.h */,
+				772CBBB91B55495A007124EE /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		7778D5A21B47DE8D00745011 = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +851,7 @@
 		77F2DE4E1B51FEFD00B42779 /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				772CBBB71B55495A007124EE /* Toast */,
 				77ECEAAF1B52F8BC0088010E /* iOSKnobControl */,
 				77ECEA9D1B52DD1B0088010E /* WYPopoverController */,
 				77F2DE4F1B51FEFD00B42779 /* DKCircleButton */,
@@ -1595,6 +1608,7 @@
 				77F2E01A1B52899800B42779 /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				77F2E03D1B52899800B42779 /* GPUImageGlassSphereFilter.m in Sources */,
 				77F2E04B1B52899800B42779 /* GPUImageHueFilter.m in Sources */,
+				772CBBBA1B55495A007124EE /* UIView+Toast.m in Sources */,
 				77F2E0951B52899800B42779 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				77F2E0381B52899800B42779 /* GPUImageFramebufferCache.m in Sources */,
 				77F2E0991B52899800B42779 /* GPUImageToneCurveFilter.m in Sources */,

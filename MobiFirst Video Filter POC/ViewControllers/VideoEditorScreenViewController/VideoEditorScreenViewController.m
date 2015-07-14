@@ -10,12 +10,12 @@
 #import "WYPopoverController.h"
 #import "FilterSelectionViewController.h"
 #import "FilterGraphicsController.h"
+#import "UIView+Toast.h"
 
 @interface VideoEditorScreenViewController ()<WYPopoverControllerDelegate,FilterSelectionDelegate>
 {
     WYPopoverController* popOverControllerObj;
     CGAffineTransform popOverControlButtonOriginalTransform;
-
 }
 
 @end
@@ -72,6 +72,8 @@
 
 -(IBAction)applyToVideoButtonAction:(UIButton *)sender
 {
+    [_applyToVideoButton setEnabled:NO];
+        
     FilterGraphicsController* localFilterControllerObj = FILTER_GRAPHICS_CONTROLLER_OBJECT;
     
     [localFilterControllerObj applyFilterToVideoToView:_selectedFilterImageView];
@@ -353,12 +355,24 @@
 
 - (void)showCompletionAlert
 {
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_selectedOptionLabel setText:@"Choose Filters or Settings:"];
+        [_applyToVideoButton setEnabled:NO];
+        
+        [self.view makeToast:@"Filter applied to video successfully and saved. You can view the same from the previous screen."];
+    });
+   
 }
 
 - (void)showFailedAlert
 {
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [_selectedOptionLabel setText:@"Choose Filters or Settings:"];
+        [_applyToVideoButton setEnabled:NO];
+        
+        [self.view makeToast:@"The conversion of the video failed!"];
+    });
 }
 
 @end
