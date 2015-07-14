@@ -39,10 +39,11 @@ static FilterGraphicsController* sharedObject = nil;
 {
     [self setFilterTypeForSettingsOrFilterSelectedType:filterType];
     
-    GPUImagePicture *sourcePicture = [[GPUImagePicture alloc] initWithImage:selectedImage smoothlyScaleOutput:YES];
+    sourcePicture = nil;
+    
+    sourcePicture = [[GPUImagePicture alloc] initWithImage:selectedImage smoothlyScaleOutput:YES];
     
     GPUImageView *imageView = (GPUImageView *)imageViewForPreview;
-//    [filter forceProcessingAtSize:imageView.sizeInPixels]; // This is now needed to make the filter run at the smaller output size
     
     [sourcePicture addTarget:filter];
     
@@ -51,21 +52,9 @@ static FilterGraphicsController* sharedObject = nil;
     [sourcePicture processImage];
 }
 
--(void)setTheCorrectFilterForTheFilterType:(kSelectionType)filterType
-{
-//    switch (filterType) {
-//        case kFilterType1:
-//            <#statements#>
-//            break;
-//            
-//        default:
-//            break;
-//    }
-}
-
 - (void)populateTheFilterAvailableArray
 {
-    NSArray* _localFilterArray = @[FILTER_POLKA,FILTER_MOSAIC,FILTER_KAWAHARA];
+    NSArray* _localFilterArray = @[FILTER_POLKA,FILTER_CROSSHATCH,FILTER_SKETCH];
     NSArray* _localSettingsArray = @[SETTINGS_CONTRAST,SETTINGS_SATURATION,SETTINGS_BRIGHTNESS,SETTINGS_HUE,SETTINGS_RGB];
     
     _filterSelectionOptionsArray = @[_localFilterArray,_localSettingsArray];
@@ -87,14 +76,14 @@ static FilterGraphicsController* sharedObject = nil;
             
             break;
             
-        case kSelectionTypeMosaic:
+        case kSelectionTypeCrossHatch:
             
             filter = [self getMosaicFilterInstanceLazyly];
             
             break;
-        case kSelectionTypeKawahara:
+        case kSelectionTypeSketch:
             
-            filter = [self getKuwaharaFilterInstanceLazyly];
+            filter = [self getSketchFilterInstanceLazyly];
             
             break;
         case kSelectionTypeContrast:
@@ -140,25 +129,23 @@ static FilterGraphicsController* sharedObject = nil;
 
 - (GPUImageOutput<GPUImageInput> *)getMosaicFilterInstanceLazyly
 {
-    if (!filterLowPass) {
+    if (!filterCrossHatch) {
         
-        filterLowPass = [[GPUImageLowPassFilter alloc] init];
+        filterCrossHatch = [[GPUImageCrosshatchFilter alloc] init];
         
     }
     
-    return filterLowPass;
+    return filterCrossHatch;
 }
 
-- (GPUImageOutput<GPUImageInput> *)getKuwaharaFilterInstanceLazyly
+- (GPUImageOutput<GPUImageInput> *)getSketchFilterInstanceLazyly
 {
-    if (!filterKuwahara) {
+    if (!filterSketch) {
         
-        filterKuwahara = [[GPUImageKuwaharaFilter alloc] init];
-        filterKuwahara.radius = 15;
-        
+        filterSketch = [[GPUImageSketchFilter alloc] init];
     }
     
-    return filterKuwahara;
+    return filterSketch;
 }
 
 - (GPUImageOutput<GPUImageInput> *)getContrastFilterInstanceLazyly
@@ -222,13 +209,13 @@ static FilterGraphicsController* sharedObject = nil;
         
         return kSelectionTypePolkaDot;
         
-    } else if ([filterName isEqualToString:FILTER_MOSAIC])
+    } else if ([filterName isEqualToString:FILTER_CROSSHATCH])
     {
-        return kSelectionTypeMosaic;
+        return kSelectionTypeCrossHatch;
     }
-    else if ([filterName isEqualToString:FILTER_KAWAHARA])
+    else if ([filterName isEqualToString:FILTER_SKETCH])
     {
-        return kSelectionTypeKawahara;
+        return kSelectionTypeSketch;
         
     } else if ([filterName isEqualToString:SETTINGS_BRIGHTNESS])
     {
@@ -258,6 +245,7 @@ static FilterGraphicsController* sharedObject = nil;
         
         [(GPUImageRGBFilter *)filter setRed:value];
         
+        [sourcePicture processImage];
     }
 }
 
@@ -266,6 +254,8 @@ static FilterGraphicsController* sharedObject = nil;
     if ([filter isKindOfClass:[GPUImageRGBFilter class]]) {
         
         [(GPUImageRGBFilter *)filter setGreen:value];
+        
+        [sourcePicture processImage];
     }
 }
 
@@ -274,12 +264,93 @@ static FilterGraphicsController* sharedObject = nil;
     if ([filter isKindOfClass:[GPUImageRGBFilter class]]) {
         
         [(GPUImageRGBFilter *)filter setBlue:value];
+        
+        [sourcePicture processImage];
     }
 }
 
 -(void)changeValueAccordingToGenericSlider:(float)value
 {
-    
+    if ([filter isKindOfClass:[GPUImageContrastFilter class]]) {
+     
+        [(GPUImageContrastFilter *)filter setContrast:value];
+        
+        [sourcePicture processImage];
+        
+    } else if ([filter isKindOfClass:[GPUImageBrightnessFilter class]]) {
+        
+        [(GPUImageBrightnessFilter *)filter setBrightness:value];
+        
+        [sourcePicture processImage];
+    } else if ([filter isKindOfClass:[GPUImageSaturationFilter class]]) {
+        
+        [(GPUImageSaturationFilter *)filter setSaturation:value];
+        
+        [sourcePicture processImage];
+    } else if ([filter isKindOfClass:[GPUImageHueFilter class]]) {
+        
+        [(GPUImageHueFilter *)filter setHue:value];
+        
+        [sourcePicture processImage];
+    } else if ([filter isKindOfClass:[GPUImagePolkaDotFilter class]]) {
+        
+        [(GPUImagePolkaDotFilter *)filter setDotScaling:value];
+        
+        [sourcePicture processImage];
+    } else if ([filter isKindOfClass:[GPUImageCrosshatchFilter class]]) {
+        
+        [(GPUImageCrosshatchFilter *)filter setCrossHatchSpacing:value];
+        
+        [sourcePicture processImage];
+    } else if ([filter isKindOfClass:[GPUImageSketchFilter class]]) {
+        
+        [sourcePicture processImage];
+    }
 }
+
+-(void)applyFilterToVideoToView:(GPUImageView *)imageViewForPreview
+{
+    NSURL* videoUrlForDemoVideoAsset = [[NSBundle mainBundle] URLForResource:@"SampleVideoForDemo" withExtension:@"mp4"];
+    
+    movieFile = [[GPUImageMovie alloc] initWithURL:videoUrlForDemoVideoAsset];
+    movieFile.runBenchmark = YES;
+    movieFile.playAtActualSpeed = NO;
+//    filter = [[GPUImageSketchFilter alloc] init];
+    
+    [movieFile addTarget:filter];
+    
+    // Only rotate the video for display, leave orientation the same for recording
+    GPUImageView *filterView = (GPUImageView *)imageViewForPreview;
+    [filter addTarget:filterView];
+    
+    // In addition to displaying to the screen, write out a processed version of the movie to disk
+    NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/SampleVideoForDemoAfterFilter.mp4"];
+    unlink([pathToMovie UTF8String]); // If a file already exists, AVAssetWriter won't let you record new frames, so delete the old movie
+    NSURL *movieURL = [NSURL fileURLWithPath:pathToMovie];
+    
+    movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:movieURL size:CGSizeMake(640.0, 480.0)];
+    [filter addTarget:movieWriter];
+    
+    // Configure this for video from the movie file, where we want to preserve all video frames and audio samples
+    movieWriter.shouldPassthroughAudio = YES;
+    movieFile.audioEncodingTarget = movieWriter;
+    [movieFile enableSynchronizedEncodingUsingMovieWriter:movieWriter];
+    
+    [movieWriter setDelegate:self];
+    
+    [movieWriter startRecording];
+    [movieFile startProcessing];
+}
+
+- (void)movieRecordingCompleted
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:MOVIE_CONVERSION_COMPLETE_NOTIFICATION object:nil];
+}
+
+- (void)movieRecordingFailedWithError:(NSError*)error
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:MOVIE_CONVERSION_FAILED_NOTIFICATION object:nil];
+}
+
 
 @end

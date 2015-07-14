@@ -74,4 +74,10 @@ static UIHelper* sharedObject = nil;
     return theAnimation;
 }
 
+-(void)showAnAlertViewWithTitle:(NSString *)title andBody:(NSString *)bodyText andDelegate:(id)delegate andOkButtonTitle:(NSString *)okButtonTitle
+{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:bodyText delegate:delegate cancelButtonTitle:nil otherButtonTitles:okButtonTitle, nil];
+    [alertView show];
+}
+
 @end

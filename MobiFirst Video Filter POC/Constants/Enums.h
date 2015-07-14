@@ -13,8 +13,8 @@
 typedef enum
 {
     kSelectionTypePolkaDot,
-    kSelectionTypeMosaic,
-    kSelectionTypeKawahara,
+    kSelectionTypeCrossHatch,
+    kSelectionTypeSketch,
     kSelectionTypeContrast,
     kSelectionTypeSaturation,
     kSelectionTypeBrightness,

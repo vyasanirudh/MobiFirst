@@ -10,20 +10,22 @@
 #import "GPUImage.h"
 #import "VideoEditorScreenViewController.h"
 
-@interface FilterGraphicsController : NSObject
+@interface FilterGraphicsController : NSObject<GPUImageMovieWriterDelegate>
 {
     GPUImageMovie *movieFile;
     GPUImageOutput<GPUImageInput> *filter;
     GPUImageMovieWriter *movieWriter;
     
     GPUImagePolkaDotFilter* filterPolkaDot;
-    GPUImageLowPassFilter* filterLowPass;
-    GPUImageKuwaharaFilter* filterKuwahara;
+    GPUImageCrosshatchFilter* filterCrossHatch;
+    GPUImageSketchFilter* filterSketch;
     GPUImageContrastFilter* filterContrast;
     GPUImageBrightnessFilter* filterBrightness;
     GPUImageSaturationFilter* filterSaturation;
     GPUImageHueFilter* filterHue;
     GPUImageRGBFilter* filterRGB;
+    
+    GPUImagePicture *sourcePicture;
 }
 
 @property (nonatomic, strong) NSArray* filterSelectionOptionsArray;
@@ -36,6 +38,8 @@
 + (FilterGraphicsController*) sharedInstance;
 
 - (void) applyFilterForPreviewToImageView:(GPUImageView*)imageViewForPreview andFilterType:(kSelectionType)filterType andImage:(UIImage*)selectedImage;
+
+- (void) applyFilterToVideoToView:(GPUImageView*)imageViewForPreview;
 
 - (kSelectionType) getTypeForFilterName:(NSString*)filterName;
 

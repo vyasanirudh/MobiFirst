@@ -31,6 +31,7 @@
     
     [_selectedFilterImageView setHidden:YES];
     
+    [_applyToVideoButton setEnabled:NO];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -39,6 +40,8 @@
     [super viewDidAppear:animated];
     
     popOverControlButtonOriginalTransform = _popOverControlButton.transform;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +64,15 @@
     [self buttonShouldAnimateForScale:sender.selected andButton:sender];
     
     [self showOrHidePopContainingFilterSelectionOptions:sender];
+}
+
+-(IBAction)applyToVideoButtonAction:(UIButton *)sender
+{
+    FilterGraphicsController* localFilterControllerObj = FILTER_GRAPHICS_CONTROLLER_OBJECT;
+    
+    [localFilterControllerObj applyFilterToVideoToView:_selectedFilterImageView];
+    
+    localFilterControllerObj = nil;
 }
 
 #pragma mark - Helper Method to add or remove Pop Over
@@ -198,11 +210,151 @@
     [_videoScreenCapImageView setHidden:YES];
     [_selectedFilterImageView setHidden:NO];
 
+    [_applyToVideoButton setEnabled:YES];
+    
     FilterGraphicsController* localFilterControllerObj = FILTER_GRAPHICS_CONTROLLER_OBJECT;
+    
+    [self setSliderMinMaxAndCurrentValuesForType:filterType];
     
     [localFilterControllerObj applyFilterForPreviewToImageView:_selectedFilterImageView andFilterType:filterType andImage:_videoScreenCapImageView.image];
     
     localFilterControllerObj = nil;
+}
+
+- (void)setSliderMinMaxAndCurrentValuesForType:(kSelectionType)filterType
+{
+    switch (filterType) {
+            
+        case kSelectionTypePolkaDot:
+            
+            [_genericSliderOutlet setMaximumValue:1.0f];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:.9f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+            
+        case kSelectionTypeCrossHatch:
+            
+            [_genericSliderOutlet setMaximumValue:1.0f];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:.03f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+        case kSelectionTypeSketch:
+            
+            [_genericSliderOutlet setMaximumValue:15.30f];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:0.0];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:NO];
+            
+            break;
+        case kSelectionTypeContrast:
+            
+            [_genericSliderOutlet setMaximumValue:4.0f];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:1.0f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+        case kSelectionTypeBrightness:
+            
+            [_genericSliderOutlet setMaximumValue:1.0f];
+            [_genericSliderOutlet setMinimumValue:-1.0f];
+            [_genericSliderOutlet setValue:0.0f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+        case kSelectionTypeSaturation:
+            
+            [_genericSliderOutlet setMaximumValue:2.0f];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:1.0f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+        case kSelectionTypeHue:
+            
+            [_genericSliderOutlet setMaximumValue:360.];
+            [_genericSliderOutlet setMinimumValue:0.0f];
+            [_genericSliderOutlet setValue:0.0f];
+            
+            [_redSliderOutlet setEnabled:NO];
+            [_greenSliderOutlet setEnabled:NO];
+            [_blueSliderOutlet setEnabled:NO];
+            [_genericSliderOutlet setEnabled:YES];
+            
+            break;
+        case kSelectionTypeRGB:
+            
+            [_redSliderOutlet setEnabled:YES];
+            [_greenSliderOutlet setEnabled:YES];
+            [_blueSliderOutlet setEnabled:YES];
+            [_genericSliderOutlet setEnabled:NO];
+            
+            [_redSliderOutlet setMaximumValue:255.0f];
+            [_redSliderOutlet setMinimumValue:0.0f];
+            [_redSliderOutlet setValue:0.0f];
+            
+            [_greenSliderOutlet setMaximumValue:255.0f];
+            [_greenSliderOutlet setMinimumValue:0.0f];
+            [_greenSliderOutlet setValue:0.0f];
+            
+            [_blueSliderOutlet setMaximumValue:255.0f];
+            [_blueSliderOutlet setMinimumValue:0.0f];
+            [_blueSliderOutlet setValue:0.0f];
+            
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)addObserverForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCompletionAlert) name:MOVIE_CONVERSION_COMPLETE_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showFailedAlert) name:MOVIE_CONVERSION_FAILED_NOTIFICATION object:nil];
+}
+
+- (void)removeObserverForNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MOVIE_CONVERSION_COMPLETE_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MOVIE_CONVERSION_FAILED_NOTIFICATION object:nil];
+}
+
+- (void)showCompletionAlert
+{
+    [UIHELPER showAnAlertViewWithTitle:@"Success!" andBody:@"Video has successfully been converted and saved." andDelegate:nil andOkButtonTitle:@"Ok"];
+}
+
+- (void)showFailedAlert
+{
+    [UIHELPER showAnAlertViewWithTitle:@"Alas!" andBody:@"Video failed to convert. Some error occured." andDelegate:nil andOkButtonTitle:@"Ok"];
 }
 
 @end

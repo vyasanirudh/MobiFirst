@@ -26,12 +26,16 @@
 /*Filter Strings*/
 
 #define FILTER_POLKA                              @"Polka Dot Filter"
-#define FILTER_MOSAIC                             @"Mosaic Filter"
-#define FILTER_KAWAHARA                           @"Kawahara"
+#define FILTER_CROSSHATCH                         @"Cross Hatch Filter"
+#define FILTER_SKETCH                             @"Pencil Sketch"
 #define SETTINGS_CONTRAST                         @"Contrast"
 #define SETTINGS_SATURATION                       @"Saturation"
 #define SETTINGS_BRIGHTNESS                       @"Brightness"
 #define SETTINGS_HUE                              @"Hue"
 #define SETTINGS_RGB                              @"RGB"
+
+#define MOVIE_CONVERSION_COMPLETE_NOTIFICATION    @"movie_recording_completed"
+#define MOVIE_CONVERSION_FAILED_NOTIFICATION      @"movie_recording_failed"
+
 
 #endif

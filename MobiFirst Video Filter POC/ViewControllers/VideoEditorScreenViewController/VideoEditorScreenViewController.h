@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView*        videoScreenCapImageView;
 
 @property (nonatomic, weak) IBOutlet UIButton*           popOverControlButton;
+@property (nonatomic, weak) IBOutlet UIButton*           applyToVideoButton;
 
 @property (nonatomic, weak) IBOutlet UILabel*            selectedOptionLabel;
 
@@ -26,6 +27,7 @@
 @property (nonatomic, weak) IBOutlet UISlider*           blueSliderOutlet;
 
 -(IBAction)popOverControlButtonAction:(UIButton*)sender;
+-(IBAction)applyToVideoButtonAction:(UIButton*)sender;
 
 -(IBAction)sliderValueChanged:(UISlider*)slider;
 
