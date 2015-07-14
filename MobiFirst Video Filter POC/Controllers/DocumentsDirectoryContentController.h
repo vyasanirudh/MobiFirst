@@ -20,6 +20,11 @@
 @property (nonatomic, strong) NSMutableArray* videoFilesPresentInTheDirectory;
 @property (nonatomic, strong) NSMutableArray* videoFilesPresentInTheDirectoryWithPath;
 
+/*!
+ * @discussion Scan through the documents directory for videos and store the path locally.
+ * @param nil
+ * @return nil
+ */
 - (void)startLookingForVideosInTheDocumentsDirectory;
 
 

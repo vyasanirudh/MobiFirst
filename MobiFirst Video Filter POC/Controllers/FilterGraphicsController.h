@@ -37,10 +37,25 @@
  */
 + (FilterGraphicsController*) sharedInstance;
 
+/*!
+ * @discussion Applies filter on an imageview for a given filter type.
+ * @param GPUImageView kSelectionType UIImage
+ * @return void
+ */
 - (void) applyFilterForPreviewToImageView:(GPUImageView*)imageViewForPreview andFilterType:(kSelectionType)filterType andImage:(UIImage*)selectedImage;
 
+/*!
+ * @discussion Applies filter on video for a given filter type.
+ * @param GPUImageView
+ * @return void
+ */
 - (void) applyFilterToVideoToView:(GPUImageView*)imageViewForPreview;
 
+/*!
+ * @discussion Returns filter type for provided filter name.
+ * @param NSString filterName
+ * @return kSelectionType
+ */
 - (kSelectionType) getTypeForFilterName:(NSString*)filterName;
 
 - (void)changeValueAccordingToRedSlider:(float)value;
