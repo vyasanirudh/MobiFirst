@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    /*Set up the starting point for the application.*/
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     WelcomeScreenViewController* welcomeScreenVCObj = [[WelcomeScreenViewController alloc] initWithNibName:@"WelcomeScreenViewController" bundle:nil];
     UINavigationController* baseNavigationController = [[UINavigationController alloc]initWithRootViewController:welcomeScreenVCObj];

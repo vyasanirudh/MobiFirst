@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7778D5AA1B47DE8D00745011"
-               BuildableName = "MobiFirst Video Filter POC.app"
+               BuildableName = "Video Fun!.app"
                BlueprintName = "MobiFirst Video Filter POC"
                ReferencedContainer = "container:MobiFirst Video Filter POC.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7778D5AA1B47DE8D00745011"
-            BuildableName = "MobiFirst Video Filter POC.app"
+            BuildableName = "Video Fun!.app"
             BlueprintName = "MobiFirst Video Filter POC"
             ReferencedContainer = "container:MobiFirst Video Filter POC.xcodeproj">
          </BuildableReference>
@@ -72,11 +72,12 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7778D5AA1B47DE8D00745011"
-            BuildableName = "MobiFirst Video Filter POC.app"
+            BuildableName = "Video Fun!.app"
             BlueprintName = "MobiFirst Video Filter POC"
             ReferencedContainer = "container:MobiFirst Video Filter POC.xcodeproj">
          </BuildableReference>
@@ -90,11 +91,12 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7778D5AA1B47DE8D00745011"
-            BuildableName = "MobiFirst Video Filter POC.app"
+            BuildableName = "Video Fun!.app"
             BlueprintName = "MobiFirst Video Filter POC"
             ReferencedContainer = "container:MobiFirst Video Filter POC.xcodeproj">
          </BuildableReference>
