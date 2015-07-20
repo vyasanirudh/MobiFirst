@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WelcomeScreenViewController.h"
+#import "QTouchposeApplication.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,9 @@
     
     self.window.rootViewController = baseNavigationController;
     [self.window makeKeyAndVisible];
+    
+    QTouchposeApplication *touchposeApplication = (QTouchposeApplication *)application;
+    touchposeApplication.alwaysShowTouches = YES;
     
     return YES;
 }
